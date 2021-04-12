@@ -1,0 +1,25 @@
+spring:
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: https://login.microsoftonline.com/05b34f08-7767-4152-9f42-a775d5ec9fd2/v2.0
+      client:
+        provider:
+          microsoft:
+            authorization-uri: https://login.microsoftonline.com/05b34f08-7767-4152-9f42-a775d5ec9fd2/oauth2/v2.0/authorize
+            token-uri: https://login.microsoftonline.com/05b34f08-7767-4152-9f42-a775d5ec9fd2/oauth2/v2.0/token
+            user-info-uri: https://graph.microsoft.com/oidc/userinfo
+            user-name-attribute: sub
+            jwk-set-uri: https://login.microsoftonline.com/05b34f08-7767-4152-9f42-a775d5ec9fd2/discovery/v2.0/keys
+        registration:
+          graph:
+            provider: microsoft
+            client-id: e442bd2f-0c12-486c-9e34-256100e521dc
+            client-secret: 351pv7i.60nqpWvpOijSz~vLiK9~_qZ-41
+            authorization-grant-type: authorization_code
+            redirect-uri: '{baseUrl}/login/oauth2/code/'
+            user-name-attribute-name: upn
+            scope:
+              - https://graph.microsoft.com/User.Read
+              - https://graph.microsoft.com/Directory.Read.All
